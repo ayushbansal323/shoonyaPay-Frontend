@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ShoonyaPe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          ShoonyaPe
+        </a>
+      </div>
+    </nav>
+    <div class="container-sm">
+      <ul class="list-group list-group-flush" id = "expense-list">
+        <!-- <li class="list-group-item">
+          <div class="card" style="width: 100%;">
+          <img src="https://osome.com/content/images/size/w930/2020/07/Scrabble-Deductible-Expenses-Singapore-Company.webp" class="card-img-top" alt="Expenses">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </li> -->
+      </ul>
+    </div>
+    <script>
+      imgExpenses = '<img src="https://osome.com/content/images/size/w930/2020/07/Scrabble-Deductible-Expenses-Singapore-Company.webp" class="card-img-top" alt="Expenses" height="200">'
+
+      imgMedical = '<img src="https://www.myhealthinsurance.com/static/43f4171d52ba5b4b5649d81d7aea0268/c147e/why-is-healthcare-so-expensive.jpg" class="card-img-top" alt="Expenses" height="200">'
+
+      imgInsurance = '<img src="https://www.iatse26.org/wp-content/uploads/2022/07/health-insurance_corporate.jpg" class="card-img-top" alt="Expenses" height="200">'
+
+      imgEducational = '<img src="data:image/jpeg;base64,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" class="card-img-top" alt="Expenses" height="200">'
+
+      var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    response = JSON.parse(this.responseText);
+                    // alert(response)
+                    for(let i = 0; i < response.length; i++) {
+                        let obj = response[i];
+                        addExpenses(obj)
+                        console.log(obj);
+                    }
+            }
+            };
+            xhttp.open("GET", "https://testpune.azurewebsites.net/shoonyape/api/GetTransactions/1/category/09", true);
+            xhttp.send()
+            
+        function addExpenses(object) {
+              category = object.category.trim()
+              var imgDiv = imgExpenses
+              taxDiv = '<span class="badge text-bg-dark"> Max tax deducable 0 Rs </span>'
+              console.log(category);
+              
+              console.log(category === 'Insurance');
+              if(category == 'Insurance')
+              {
+                imgDiv= imgInsurance
+                taxDiv = '<span class="badge text-bg-dark"> Max tax deducable 80000 Rs Section 80D </span>'
+              }
+              else if(category == "EducationLoan")
+              {
+                imgDiv= imgEducational
+                taxDiv = '<span class="badge text-bg-dark"> Max tax deducable on interest No Limit Section 80E</span>'
+              }
+
+              else if(category === "Medical")
+              {
+                imgDiv= imgMedical
+                taxDiv = '<span class="badge text-bg-dark"> Max tax deducable 100000 Rs Section 80DDB </span>'
+              }
+              titleDiv = '<h5 class="card-title">'+object.category+'</h5>'
+              amountDiv = '<p class="card-text">Amount : '+ object.amount+' RS</p>'
+              
+              elementExpense = '<li class="list-group-item"> \
+                <div class="card" style="width: 90%; ">' + imgDiv +' \
+                    <div class="card-body">' + titleDiv + amountDiv + taxDiv + '\
+                </div> \
+              </div> \
+            </li>'
+            document.getElementById("expense-list").innerHTML += elementExpense;
+            
+        }
+    </script>
+  </body>
+</html>
